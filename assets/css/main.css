@@ -1,0 +1,11 @@
+.button.is-imper {
+  background-color: #00bf8b !important;
+  border-color: #00bf8b !important;
+  color: white !important;
+}
+
+.button.is-nav {
+  background-color: #00bf8c00 !important;
+  border-color: #00bf8c00 !important;
+  color: white !important;
+}
