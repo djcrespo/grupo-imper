@@ -38,21 +38,29 @@
 
     <section>
       <div>
-        <br />
         <h1 class="title is-size-x has-text-centered mt-6 mb-6">
           Hemos trabajado con
         </h1>
       </div>
 
-      <b-carousel>
-        <b-carousel-item v-for="(carousel, index) in carousels" :key="index">
-            <div class="container has-text-centered">
-              <h1>{{carousel.text}}</h1>
+      <b-carousel-list v-model="test" :data="items" :items-to-show="4">
+        <template #item="list">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-1by1">
+                <img :src="list.image" alt="">
+              </figure>
             </div>
-            <img :src="carousel.image" :alt="carousel.text" width="100%"/>
-        </b-carousel-item>
-      </b-carousel>
+            <div class="card-content">
+              <div class="content">
+                <p class="title is-6">{{list.text}}</p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </b-carousel-list>
     </section>
+    <br>
   </div>
 </template>
 
@@ -61,11 +69,8 @@ export default {
   name: 'portafolioPage',
   data () {
     return {
-      carousels: [
-        {
-          text: 'Bacsa',
-          image: 'https://scontent.fmid1-4.fna.fbcdn.net/v/t31.18172-8/12764683_1109671349084616_6502697550356567548_o.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeE1iESwMyJTi3W6lCLyYWkA0G4f2-uYsVvQbh_b65ixW9GjnpDcvEOJYTtb_XdP27X1bLA_cgPnRH1JUXa0De9K&_nc_ohc=fw-W5SsPpDwAX9Q3CtW&_nc_ht=scontent.fmid1-4.fna&oh=00_AT94_A2_Z63cT14O1DNpN8irnW1AKJYxGuLOXlfVP6Ff5Q&oe=62E7BB49'
-        },
+      test: 0,
+      items: [
         {
           text: 'Yucatán Country Club',
           image: 'https://scontent.fmid1-4.fna.fbcdn.net/v/t31.18172-8/18358792_10155742823845730_7995532379953598131_o.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEmrDhTIHnTmEA3xPbIhgGfEsgsesycq38SyCx6zJyrf2LE1K_-f-Jy0_BcMg8HOSd6c1FMQ_HYHAxzTA2MhI5Y&_nc_ohc=lqMEybX2mzwAX_pOlBk&_nc_oc=AQkvxn27jopKv4yPXstAJkqaDnZ3CHg2UpOecphef2dUWzi1KyOnwF5wME2ZK7F3x-I&_nc_ht=scontent.fmid1-4.fna&oh=00_AT9UcjRmcnxGtHxaNZ0A1L-1BEwcOmvYagyDiK48bPcJzw&oe=62E90C4B'
@@ -85,6 +90,10 @@ export default {
         {
           text: 'Valentin Imperial Maya',
           image: 'https://scontent.fmid1-3.fna.fbcdn.net/v/t39.30808-6/272970554_10159906120554736_919093344214318775_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEFSPXfDNj2pCUX-Nqf8waQu_RvxTI2U2m79G_FMjZTaUcopqxFP1bkIyrRzLIImSykZYrVlASoSiU7fTn-Y3Yv&_nc_ohc=reiKU7WUJAEAX873Yys&_nc_ht=scontent.fmid1-3.fna&oh=00_AT8hmVBTeJdhka3nUjI6VtBhgPWfNLUXTIa0wJKndwkCkQ&oe=62C84C06'
+        },
+        {
+          text: 'Bacsa',
+          image: 'https://scontent.fmid1-4.fna.fbcdn.net/v/t31.18172-8/12764683_1109671349084616_6502697550356567548_o.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeE1iESwMyJTi3W6lCLyYWkA0G4f2-uYsVvQbh_b65ixW9GjnpDcvEOJYTtb_XdP27X1bLA_cgPnRH1JUXa0De9K&_nc_ohc=-uyZardsR5UAX8cEdav&_nc_ht=scontent.fmid1-4.fna&oh=00_AT9I_BCPACw_Ka32TbPq7qZhtRKBIv6yF_gv4P5eFSM_WQ&oe=62EBAFC9'
         }
       ]
     }
