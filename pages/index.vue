@@ -51,11 +51,12 @@ export default {
 }
 
 video {
+  /*
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
-  /*filter:opacity(40%);*/
+  filter:opacity(40%);*/
   filter: brightness(90%);
 }
 </style>

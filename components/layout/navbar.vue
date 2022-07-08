@@ -64,4 +64,13 @@ export default {
   background-color: #004eab !important;
   color: rgb(255, 255, 255);
 }
+
+.navbar-burger {
+  color: rgb(255, 255, 255);
+}
+
+.navbar-menu.is-active {
+  background-color: #004eab !important;
+  color: rgb(255, 255, 255);
+}
 </style>

@@ -1,6 +1,14 @@
 <template>
   <div class="container">
     <section>
+      <div class="video-container">
+        <video playsinline autoplay muted loop>
+          <source src="@/assets/video/video4.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <section>
       <div class="hero-body">
         <div class="container has-text-justified">
           <div class="column is-8 is-offset-2">
@@ -43,22 +51,26 @@
         </h1>
       </div>
 
-      <b-carousel-list v-model="test" :data="items" :items-to-show="4">
-        <template #item="list">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-1by1">
-                <img :src="list.image" alt="">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                <p class="title is-6">{{list.text}}</p>
+      <b-carousel :repeat="true" :indicator="false">
+        <b-carousel-item v-for="(item, i) in items" :key="i">
+          <div class="container m-4">
+            <div class="card">
+              <div class="card-image">
+                <b-image
+                  :src="item.image"
+                  :alt="item.text"
+                  width="100%"
+                  height="100%"
+                  ratio="1.5"
+                ></b-image>
+              </div>
+              <div class="card-content">
+                <p class="title is-size-5 has-text-centered">{{item.text}}</p>
               </div>
             </div>
           </div>
-        </template>
-      </b-carousel-list>
+        </b-carousel-item>
+      </b-carousel>
     </section>
     <br>
   </div>
@@ -89,7 +101,7 @@ export default {
         },
         {
           text: 'Valentin Imperial Maya',
-          image: 'https://scontent.fmid1-3.fna.fbcdn.net/v/t39.30808-6/272970554_10159906120554736_919093344214318775_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEFSPXfDNj2pCUX-Nqf8waQu_RvxTI2U2m79G_FMjZTaUcopqxFP1bkIyrRzLIImSykZYrVlASoSiU7fTn-Y3Yv&_nc_ohc=reiKU7WUJAEAX873Yys&_nc_ht=scontent.fmid1-3.fna&oh=00_AT8hmVBTeJdhka3nUjI6VtBhgPWfNLUXTIa0wJKndwkCkQ&oe=62C84C06'
+          image: 'https://scontent.fmid1-3.fna.fbcdn.net/v/t39.30808-6/272970554_10159906120554736_919093344214318775_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEFSPXfDNj2pCUX-Nqf8waQu_RvxTI2U2m79G_FMjZTaUcopqxFP1bkIyrRzLIImSykZYrVlASoSiU7fTn-Y3Yv&_nc_ohc=T2KdmKuy_8gAX_Afc-5&_nc_ht=scontent.fmid1-3.fna&oh=00_AT_0ZON2CFgj-4ksvQj5iqUKvtASMV774ccBD3mdHVmNcA&oe=62CE3AC6'
         },
         {
           text: 'Bacsa',

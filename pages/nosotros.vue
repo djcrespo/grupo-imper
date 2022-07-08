@@ -7,7 +7,6 @@
         </video>
       </div>
     </section>
-
     <section>
       <div class="hero-body">
         <div class="container has-text-justified">
