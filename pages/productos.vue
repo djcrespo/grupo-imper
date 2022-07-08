@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <br />
     <section>
       <div class="video-container">
         <video playsinline autoplay muted loop>
@@ -24,16 +25,10 @@
     <section>
       <b-carousel :repeat="true" :indicator="false">
         <b-carousel-item v-for="(item, i) in items" :key="i">
-          <div class="container m-4">
+          <div class="container">
             <div class="card">
-              <div class="card-image">
-                <b-image
-                  :src="item.image"
-                  :alt="item.text"
-                  width="100%"
-                  height="100%"
-                  ratio="1.5"
-                ></b-image>
+              <div class="card-image is-flex is-justify-content-center">
+                <img :src="item.image" class="img" alt="">
               </div>
             </div>
           </div>
@@ -70,3 +65,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.img {
+  margin: 10px;
+  width: 35%;
+  height: 35%;
+}
+</style>
