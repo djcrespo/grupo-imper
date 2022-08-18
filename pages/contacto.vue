@@ -98,11 +98,15 @@
                     <p class="subtitle is-size-6">{{ point.address }}</p>
                   </div>
                   <div class="card-footer">
-                    <div class="container has-text-centered">
-                      <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
-                    </div>
-                    <div class="container has-text-centered">
-                      <a :href="'mailito:' + point.email">{{point.email}}</a>
+                      <div class="container">
+                        <div class="columns has-text-centered">
+                        <div class="column is-6">
+                        <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
+                        </div>
+                        <div class="column is-6">
+                          <a :href="'mailito:' + point.email">{{point.email}}</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -123,13 +127,15 @@
                     <p class="subtitle is-size-6">{{ point.address }}</p>
                   </div>
                   <div class="card-footer">
-                    <div class="columns has-text-centered">
-                      <div class="column has-text-centered">
+                    <div class="container">
+                      <div class="columns has-text-centered">
+                      <div class="column is-6">
                       <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
                       </div>
-                      <div class="column has-text-centered">
+                      <div class="column is-6">
                         <a :href="'mailito:' + point.email">{{point.email}}</a>
                       </div>
+                    </div>
                     </div>
                   </div>
                 </div>
