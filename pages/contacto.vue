@@ -123,11 +123,13 @@
                     <p class="subtitle is-size-6">{{ point.address }}</p>
                   </div>
                   <div class="card-footer">
-                    <div class="container has-text-centered">
+                    <div class="columns has-text-centered">
+                      <div class="column has-text-centered">
                       <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
-                    </div>
-                    <div class="container has-text-centered">
-                      <a :href="'mailito:' + point.email">{{point.email}}</a>
+                      </div>
+                      <div class="column has-text-centered">
+                        <a :href="'mailito:' + point.email">{{point.email}}</a>
+                      </div>
                     </div>
                   </div>
                 </div>
