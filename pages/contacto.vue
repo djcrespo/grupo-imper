@@ -99,7 +99,10 @@
                   </div>
                   <div class="card-footer">
                     <div class="container has-text-centered">
-                      <a :href="point.phone">Contacto</a>
+                      <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
+                    </div>
+                    <div class="container has-text-centered">
+                      <a :href="'mailito:' + point.email">{{point.email}}</a>
                     </div>
                   </div>
                 </div>
@@ -121,7 +124,10 @@
                   </div>
                   <div class="card-footer">
                     <div class="container has-text-centered">
-                      <a :href="point.phone">Contacto</a>
+                      <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
+                    </div>
+                    <div class="container has-text-centered">
+                      <a :href="'mailito:' + point.email">{{point.email}}</a>
                     </div>
                   </div>
                 </div>
@@ -144,51 +150,59 @@ export default {
       points: [
         {
           name: 'Matriz',
-          address: 'C. 21 #310B por 50 y 52 Col. Roma',
-          phone: 'tel:+52(999) 920 12 12'
+          address: 'Calle 21 No. 310-B x 50 y 52 No. 310-B Col. Roma, C.P. 97218 Mérida, Yucatán, México',
+          phone: '(999) 920 12 12',
+          email: 'ventasmatriz@grupoimper.com.mx'
         },
         {
           name: 'Buenavista',
-          address: 'C. 31 #148 local 3 por 40 y 60 Col. Buena Vista',
-          phone: 'tel:+52(999) 925 96 78'
+          address: 'Calle 31 No. 148 x 40 Y 60 Depto. 3 Col. Buenavista, C.P. 97127 Mérida, Yucatán, México',
+          phone: '(999) 925 96 78',
+          email: 'buenavista@grupoimper.com.mx'
         },
         {
           name: 'Alemán',
           address:
-            'Circuito Colonias #168 por 29A Locales 5 y 6 Col. Miguel Alemán CP. 97148',
-          phone: 'tel:+52(999) 926 20 40'
+            'Calle 29-A No. 168 x 20 Deptos. 5 Y 6 Col. Miguel Alemán, C.P. 97148 Mérida, Yucatán, México',
+          phone: '(999) 926 20 40',
+          email: 'aleman@grupoimper.com.mx'
         },
         {
           name: 'Sur',
           address:
-            'C. 96 #877A Circuito Colonias por 81D Col. Obrera CP. 97260',
-          phone: 'tel:+52(999) 984 28 88'
+            'Calle 96 No. 802 Local 4 x 81-C y 81-D Col. Obrera, C.P. 97260 Mérida, Yucatán, México',
+          phone: '(999) 984 28 88',
+          email: 'sur96@grupoimper.com.mx'
         }
       ],
       pointsExterns: [
         {
           name: 'Suc. Cancún',
           address:
-            'Av. Uxmal #248 Sm. 22 Mz 24 Lote 46 por Calle Margaritas y Ave. Yaxchilán',
-          phone: 'tel:+52(998) 884 12 20'
+            'Av. Uxmal No. 248 por Av. Margaritas y Yaxchilán Mza 24 Smz 22 Col. Centro, C.P. 77500 Benito Juárez, Quintana Roo, México',
+          phone: '(998) 884 12 20',
+          email: 'cancun@grupoimper.com.mx'
         },
         {
           name: 'Playa del Carmen',
           address:
-            'Av. Constituyentes lote 2 int. 4 por 95 Av. Norte y 100 Av. Norte Co. Elido, CP. 77710',
-          phone: 'tel:+52(984) 873 11 71'
+            'Av. Constituyentes Lote 2 x 95 y 100 Av. Norte Col. Ejido, C.P. 77710 Solidaridad, Quintana Roo, México',
+          phone: '(984) 873 11 71',
+          email: 'playa@grupoimper.com.mx'
         },
         {
           name: 'Chetumal',
           address:
-            'Av. Fransisco I Madero #167 por Efrain Aguilar y Mahatma Gandhi Col. Centro',
-          phone: 'tel:+52(999) 832 26 19'
+            'Av. Francisco I. Madero por Efraín Aguilar y Mahatma Gandhi No. 179-A Col. Centro, C.P. 77000 Othón P. Blanco, Quintana Roo, México',
+          phone: '(999) 832 26 19',
+          email: 'chetumal@grupoimper.com.mx'
         },
         {
           name: 'Campeche',
           address:
-            'Av. Gobernadores #387 Local C, entre ecuador y Perú Col. Santa Ana, CP. 24050',
-          phone: 'tel:+52(981) 811 04 93'
+            'Av. Gobernadores Local C entre Perú y Ecuador No. 387 Col. Santa Ana, C.P. 24050 Campeche, Campeche, México',
+          phone: '(981) 811 04 93',
+          email: 'campeche@grupoimper.com.mx'
         }
       ],
       pointsNames: [

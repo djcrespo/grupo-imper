@@ -15,7 +15,7 @@
           </span>
         </div>
         <div class="column">
-          <p>© Grupo Imper, S.A. de C.V.</p>
+          <p>© Grupo Imper</p>
         </div>
       </div>
     </div>
