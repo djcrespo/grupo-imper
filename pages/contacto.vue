@@ -104,7 +104,7 @@
                         <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
                         </div>
                         <div class="column is-6">
-                          <a :href="'mailito:' + point.email">{{point.email}}</a>
+                          <a :href="'mailto:' + point.email">{{point.email}}</a>
                         </div>
                       </div>
                     </div>
