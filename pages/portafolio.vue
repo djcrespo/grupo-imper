@@ -52,22 +52,19 @@
         </h1>
       </div>
 
-      <b-carousel :repeat="true" :indicator="false">
-        <b-carousel-item v-for="(item, i) in items" :key="i">
-          <div class="container">
+      <div class="container">
+        <b-carousel-list v-model="test" :data="items" :items-to-show="4" :autoplay="true">
+          <template #item="list">
             <div class="card">
-              <div class="card-image is-flex is-justify-content-center">
-                <img :src="item.image" class="img" alt="">
-              </div>
-              <div class="card-content">
-                <p class="title is-size-5 has-text-centered">{{item.text}}</p>
+              <div class="card-image">
+                <img :src="list.image" alt="" />
               </div>
             </div>
-          </div>
-        </b-carousel-item>
-      </b-carousel>
+          </template>
+        </b-carousel-list>
+      </div>
     </section>
-    <br>
+    <br />
   </div>
 </template>
 
@@ -79,28 +76,22 @@ export default {
       test: 0,
       items: [
         {
-          text: 'Yucatán Country Club',
-          image: 'https://scontent.fmid1-4.fna.fbcdn.net/v/t31.18172-8/18358792_10155742823845730_7995532379953598131_o.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEmrDhTIHnTmEA3xPbIhgGfEsgsesycq38SyCx6zJyrf2LE1K_-f-Jy0_BcMg8HOSd6c1FMQ_HYHAxzTA2MhI5Y&_nc_ohc=lqMEybX2mzwAX_pOlBk&_nc_oc=AQkvxn27jopKv4yPXstAJkqaDnZ3CHg2UpOecphef2dUWzi1KyOnwF5wME2ZK7F3x-I&_nc_ht=scontent.fmid1-4.fna&oh=00_AT9UcjRmcnxGtHxaNZ0A1L-1BEwcOmvYagyDiK48bPcJzw&oe=62E90C4B'
+          image: require('@/assets/img/portafolio/yucatan_country_club.png')
         },
         {
-          text: 'Soriana',
-          image: 'https://scontent.fmid1-2.fna.fbcdn.net/v/t1.6435-9/88114641_2872286176150221_7339260417715208192_n.png?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeF527eicXJVG6q5axQj0LCsXwMA-Atmz6dfAwD4C2bPpxvyxBXLd-SjHss-a_yvsk3mEqhb517DzeuqZI8iOakF&_nc_ohc=q-Gun38l56oAX-REVG_&_nc_ht=scontent.fmid1-2.fna&oh=00_AT90KcCarNiJQvghFRWzqulytVkGAe4o_94NnYdzf8s4Mg&oe=62EA17C9'
+          image: require('@/assets/img/portafolio/holiday_inn.png')
         },
         {
-          text: 'Holiday Inn',
-          image: 'https://scontent.fmid1-4.fna.fbcdn.net/v/t39.30808-6/279490537_4364977416872021_5015835590068876600_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFXb83BJHUfRQJctYw6KQDgF8_3MvWFKoMXz_cy9YUqg4-IIgOtwteK1Y6fdfipgeA6-U1sDWZl7yS12xOwyoeV&_nc_ohc=my1So13ZUPYAX-Y4K6k&_nc_ht=scontent.fmid1-4.fna&oh=00_AT_riGjttyqXdn4RZD2han5JKVYbwkNujS2VexGXr8tGFA&oe=62C8B005'
+          image: require('@/assets/img/portafolio/holday_inn_express.jpg')
         },
         {
-          text: 'Holiday Inn Express',
-          image: 'https://scontent.fmid1-2.fna.fbcdn.net/v/t39.30808-6/208084657_6342023969144932_1470822320613249419_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFJPuuZR2FRFniuLkoDtyOa6Xe6F_T5kefpd7oX9PmR5yClL36xcK_cZ63WRFwRd2-cvCYzDqIuGADowjtZIz62&_nc_ohc=w7UncQ9e17wAX97DUsO&tn=YTkklZZDErrpHeGi&_nc_ht=scontent.fmid1-2.fna&oh=00_AT95ZK8EEyGqGCzLkm4yzGgprUmYZK8ZPI2TNNlLEQ1mZg&oe=62C8F644'
+          image: require('@/assets/img/portafolio/soriana.png')
         },
         {
-          text: 'Valentin Imperial Maya',
-          image: 'https://scontent.fmid1-3.fna.fbcdn.net/v/t39.30808-6/272970554_10159906120554736_919093344214318775_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEFSPXfDNj2pCUX-Nqf8waQu_RvxTI2U2m79G_FMjZTaUcopqxFP1bkIyrRzLIImSykZYrVlASoSiU7fTn-Y3Yv&_nc_ohc=T2KdmKuy_8gAX_Afc-5&_nc_ht=scontent.fmid1-3.fna&oh=00_AT_0ZON2CFgj-4ksvQj5iqUKvtASMV774ccBD3mdHVmNcA&oe=62CE3AC6'
+          image: require('@/assets/img/portafolio/valentin_imperial_maya.jpg')
         },
         {
-          text: 'Bacsa',
-          image: 'https://scontent.fmid1-4.fna.fbcdn.net/v/t31.18172-8/12764683_1109671349084616_6502697550356567548_o.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeE1iESwMyJTi3W6lCLyYWkA0G4f2-uYsVvQbh_b65ixW9GjnpDcvEOJYTtb_XdP27X1bLA_cgPnRH1JUXa0De9K&_nc_ohc=-uyZardsR5UAX8cEdav&_nc_ht=scontent.fmid1-4.fna&oh=00_AT9I_BCPACw_Ka32TbPq7qZhtRKBIv6yF_gv4P5eFSM_WQ&oe=62EBAFC9'
+          image: require('@/assets/img/portafolio/bacsa_3.png')
         }
       ]
     }
@@ -109,9 +100,7 @@ export default {
 </script>
 
 <style>
-.img {
-  margin: 10px;
-  width: 35%;
-  height: 35%;
+b-carousel {
+  height: 100%;
 }
 </style>
