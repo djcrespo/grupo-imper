@@ -44,7 +44,7 @@
           </section>
         </div>
         <div class="column is-5">
-          <form action="">
+          <form>
             <b-field custom-class="has-text-white" label="Nombre">
               <b-input v-model="form.name"></b-input>
             </b-field>
@@ -57,12 +57,15 @@
             <b-field custom-class="has-text-white" label="Empresa">
               <b-input v-model="form.company"></b-input>
             </b-field>
+            <b-switch v-model="isSwitched" type="is-light">
+              <p class="text">{{ isSwitched ? 'Fuera de yucatán' : 'En Yucatán' }}</p>
+            </b-switch>
             <b-field custom-class="has-text-white" label="Dirigido a">
-              <b-select placeholder="Selecciona una sucursal">
+              <b-select v-model="form.email" placeholder="Selecciona una sucursal">
                 <option
-                  v-for="option in pointsNames"
-                  :value="option.name"
-                  :key="option.id"
+                  v-for="option in (isSwitched ? pointsExterns : points)"
+                  :value="option.email"
+                  :key="option.name"
                 >
                   {{ option.name }}
                 </option>
@@ -75,6 +78,7 @@
                 type="textarea"
               ></b-input>
             </b-field>
+            <b-button @click="sendEmail">Enviar</b-button>
           </form>
         </div>
       </div>
@@ -150,11 +154,24 @@
 </template>
 
 <script>
+import emailjs from '@emailjs/browser'
+
 export default {
   name: 'contactoPage',
   data () {
     return {
       form: {},
+      isSwitched: false,
+      type: [
+        {
+          id: 1,
+          name: 'Yucatán'
+        },
+        {
+          id: 2,
+          name: 'Fuera de Yucatán'
+        }
+      ],
       points: [
         {
           name: 'Matriz',
@@ -248,11 +265,25 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    sendEmail () {
+      emailjs.sendForm('service_tiva1bq', 'template_3ah8b4q', this.form, '-tjZ1uNg3DaanP_pt')
+        .then((result) => {
+          console.log('SUCCESS!', result.text)
+        }, (error) => {
+          console.log('FAILED...', error.text)
+        })
+    }
   }
 }
 </script>
 
 <style>
+.text {
+  color: aliceblue;
+}
+
 .contact {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
     url('../assets/img/background-contact.png') no-repeat center center fixed;
