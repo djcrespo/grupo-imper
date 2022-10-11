@@ -14,6 +14,11 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    script: [
+      {
+        src: 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js'
+      }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/grupo-imper.png' },
       {

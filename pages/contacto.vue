@@ -58,12 +58,17 @@
               <b-input v-model="form.company"></b-input>
             </b-field>
             <b-switch v-model="isSwitched" type="is-light">
-              <p class="text">{{ isSwitched ? 'Fuera de yucatán' : 'En Yucatán' }}</p>
+              <p class="text">
+                {{ isSwitched ? 'Fuera de yucatán' : 'En Yucatán' }}
+              </p>
             </b-switch>
             <b-field custom-class="has-text-white" label="Dirigido a">
-              <b-select v-model="form.email" placeholder="Selecciona una sucursal">
+              <b-select
+                v-model="form.email"
+                placeholder="Selecciona una sucursal"
+              >
                 <option
-                  v-for="option in (isSwitched ? pointsExterns : points)"
+                  v-for="option in isSwitched ? pointsExterns : points"
                   :value="option.email"
                   :key="option.name"
                 >
@@ -102,13 +107,17 @@
                     <p class="subtitle is-size-6">{{ point.address }}</p>
                   </div>
                   <div class="card-footer">
-                      <div class="container">
-                        <div class="columns has-text-centered">
+                    <div class="container">
+                      <div class="columns has-text-centered">
                         <div class="column is-6">
-                        <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
+                          <a :href="'tel:+52' + point.phone">{{
+                            point.phone
+                          }}</a>
                         </div>
                         <div class="column is-6">
-                          <a :href="'mailto:' + point.email">{{point.email}}</a>
+                          <a :href="'mailto:' + point.email">{{
+                            point.email
+                          }}</a>
                         </div>
                       </div>
                     </div>
@@ -133,13 +142,17 @@
                   <div class="card-footer">
                     <div class="container">
                       <div class="columns has-text-centered">
-                      <div class="column is-6">
-                      <a :href="'tel:+52' + point.phone">{{point.phone}}</a>
+                        <div class="column is-6">
+                          <a :href="'tel:+52' + point.phone">{{
+                            point.phone
+                          }}</a>
+                        </div>
+                        <div class="column is-6">
+                          <a :href="'mailto:' + point.email">{{
+                            point.email
+                          }}</a>
+                        </div>
                       </div>
-                      <div class="column is-6">
-                        <a :href="'mailto:' + point.email">{{point.email}}</a>
-                      </div>
-                    </div>
                     </div>
                   </div>
                 </div>
@@ -154,8 +167,6 @@
 </template>
 
 <script>
-import emailjs from '@emailjs/browser'
-
 export default {
   name: 'contactoPage',
   data () {
@@ -175,13 +186,15 @@ export default {
       points: [
         {
           name: 'Matriz',
-          address: 'Calle 21 No. 310-B x 50 y 52 No. 310-B Col. Roma, C.P. 97218 Mérida, Yucatán, México',
+          address:
+            'Calle 21 No. 310-B x 50 y 52 No. 310-B Col. Roma, C.P. 97218 Mérida, Yucatán, México',
           phone: '(999) 920 12 12',
           email: 'ventasmatriz@grupoimper.com.mx'
         },
         {
           name: 'Buenavista',
-          address: 'Calle 31 No. 148 x 40 Y 60 Depto. 3 Col. Buenavista, C.P. 97127 Mérida, Yucatán, México',
+          address:
+            'Calle 31 No. 148 x 40 Y 60 Depto. 3 Col. Buenavista, C.P. 97127 Mérida, Yucatán, México',
           phone: '(999) 925 96 78',
           email: 'buenavista@grupoimper.com.mx'
         },
@@ -202,7 +215,7 @@ export default {
       ],
       pointsExterns: [
         {
-          name: 'Suc. Cancún',
+          name: 'Cancún',
           address:
             'Av. Uxmal No. 248 por Av. Margaritas y Yaxchilán Mza 24 Smz 22 Col. Centro, C.P. 77500 Benito Juárez, Quintana Roo, México',
           phone: '(998) 884 12 20',
@@ -267,13 +280,25 @@ export default {
     }
   },
   methods: {
-    sendEmail () {
-      emailjs.sendForm('service_tiva1bq', 'template_3ah8b4q', this.form, '-tjZ1uNg3DaanP_pt')
-        .then((result) => {
-          console.log('SUCCESS!', result.text)
-        }, (error) => {
-          console.log('FAILED...', error.text)
+    async sendEmail () {
+      try {
+        const formulario = {
+          service_id: 'service_tiva1bq',
+          template_id: 'template_3ah8b4q',
+          user_id: '-tjZ1uNg3DaanP_pt',
+          template_params: this.form
+        }
+        await this.$store.dispatch('mail/sendEmail', formulario)
+        this.$buefy.dialog.alert({
+          title: 'Correo enviado',
+          message: 'En breve te contactaremos',
+          confirmText: 'Ok'
         })
+        this.form = {}
+        this.$router.go(this.$router.currentRoute)
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 }
