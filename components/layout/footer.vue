@@ -5,7 +5,7 @@
         <div class="column">
           <span class="icon-text">
             <span class="icon has-text-imper">
-              <i class="fa-solid fa-phone"></i>
+              <i class="fa-solid fa-phone" />
             </span>
             <span>
               <a class="has-text-white" href="tel:+529999201212">

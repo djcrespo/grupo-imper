@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <br />
+    <br>
     <section>
       <div class="video-container">
         <video playsinline autoplay muted loop>
-          <source src="@/assets/video/video4.mp4" type="video/mp4" />
+          <source src="@/assets/video/video4.mp4" type="video/mp4">
         </video>
       </div>
     </section>
@@ -57,20 +57,20 @@
           <template #item="list">
             <div class="card">
               <div class="card-image">
-                <img :src="list.image" alt="" />
+                <img :src="list.image" alt="">
               </div>
             </div>
           </template>
         </b-carousel-list>
       </div>
     </section>
-    <br />
+    <br>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'portafolioPage',
+  name: 'PortafolioPage',
   data () {
     return {
       test: 0,

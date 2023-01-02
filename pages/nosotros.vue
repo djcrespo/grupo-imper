@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <br />
+    <br>
     <section>
       <div class="video-container">
         <video playsinline autoplay muted loop>
-          <source src="@/assets/video/video2.mp4" type="video/mp4" />
+          <source src="@/assets/video/video2.mp4" type="video/mp4">
         </video>
       </div>
     </section>
@@ -46,6 +46,6 @@
 
 <script>
 export default {
-  name: 'nosotrosPage'
+  name: 'NosotrosPage'
 }
 </script>

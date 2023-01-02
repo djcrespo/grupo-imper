@@ -1,6 +1,11 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  // target: 'static',
+  target: 'static',
+
+  generate: {
+    dir: 'grupoimper',
+    subFolders: false
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -45,7 +50,7 @@ export default {
     '~/assets/css/main.css'
   ],
 
-  devtools: true,
+  devtool: false,
   ssr: false,
   telemetry: false,
 
@@ -58,7 +63,7 @@ export default {
     dirs: [
       '~/components',
       '~/components/layout'
-    ],
+    ]
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -83,5 +88,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    maxChunkSize: 300000,
+    analyze: false,
+    splitChuncks: {
+      layouts: false,
+      pages: true,
+      commons: false
+    }
   }
 }

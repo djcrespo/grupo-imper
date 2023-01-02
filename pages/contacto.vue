@@ -5,7 +5,7 @@
         <div class="column">
           <section>
             <h1 class="title has-text-white is-1">
-              ¿Quieres pedir una cotización? <br />
+              ¿Quieres pedir una cotización? <br>
               ¡Contactanos!
             </h1>
             <p class="subtitle has-text-white">
@@ -13,9 +13,11 @@
               estar atento a todo.
             </p>
           </section>
-          <br />
+          <br>
           <section>
-            <h3 class="subtitle has-text-white">Siguenos en</h3>
+            <h3 class="subtitle has-text-white">
+              Siguenos en
+            </h3>
             <div class="columns">
               <div class="column">
                 <a href="https://www.facebook.com/somosgrupoimper">
@@ -23,21 +25,21 @@
                     icon="facebook"
                     size="is-large"
                     class="has-text-white"
-                  ></b-icon>
+                  />
                 </a>
                 <a href="https://instagram.com">
                   <b-icon
                     icon="instagram"
                     size="is-large"
                     class="has-text-white"
-                  ></b-icon>
+                  />
                 </a>
                 <a href="https://twitter.com">
                   <b-icon
                     icon="twitter"
                     size="is-large"
                     class="has-text-white"
-                  ></b-icon>
+                  />
                 </a>
               </div>
             </div>
@@ -46,16 +48,16 @@
         <div class="column is-5">
           <form>
             <b-field custom-class="has-text-white" label="Nombre">
-              <b-input v-model="form.name"></b-input>
+              <b-input v-model="form.name" />
             </b-field>
             <b-field custom-class="has-text-white" label="Correo electrónico">
-              <b-input v-model="form.mail"></b-input>
+              <b-input v-model="form.mail" />
             </b-field>
             <b-field custom-class="has-text-white" label="Teléfono">
-              <b-input v-model="form.phone"></b-input>
+              <b-input v-model="form.phone" />
             </b-field>
             <b-field custom-class="has-text-white" label="Empresa">
-              <b-input v-model="form.company"></b-input>
+              <b-input v-model="form.company" />
             </b-field>
             <b-switch v-model="isSwitched" type="is-light">
               <p class="text">
@@ -69,8 +71,8 @@
               >
                 <option
                   v-for="option in isSwitched ? pointsExterns : points"
-                  :value="option.email"
                   :key="option.name"
+                  :value="option.email"
                 >
                   {{ option.name }}
                 </option>
@@ -81,9 +83,11 @@
                 v-model="form.message"
                 maxlength="200"
                 type="textarea"
-              ></b-input>
+              />
             </b-field>
-            <b-button @click="sendEmail">Enviar</b-button>
+            <b-button @click="sendEmail">
+              Enviar
+            </b-button>
           </form>
         </div>
       </div>
@@ -92,7 +96,7 @@
       <h1 class="title has-text-white has-text-centered">
         Nuestras surcursales
       </h1>
-      <br />
+      <br>
       <div class="columns">
         <div class="column is-6">
           <h1 class="title has-text-white has-text-centered">
@@ -103,8 +107,12 @@
               <div class="container m-4">
                 <div class="card">
                   <div class="card-content has-text-centered">
-                    <p class="title is-size-4">{{ point.name }}</p>
-                    <p class="subtitle is-size-6">{{ point.address }}</p>
+                    <p class="title is-size-4">
+                      {{ point.name }}
+                    </p>
+                    <p class="subtitle is-size-6">
+                      {{ point.address }}
+                    </p>
                   </div>
                   <div class="card-footer">
                     <div class="container">
@@ -136,8 +144,12 @@
               <div class="container m-4">
                 <div class="card">
                   <div class="card-content has-text-centered">
-                    <p class="title is-size-4">{{ point.name }}</p>
-                    <p class="subtitle is-size-6">{{ point.address }}</p>
+                    <p class="title is-size-4">
+                      {{ point.name }}
+                    </p>
+                    <p class="subtitle is-size-6">
+                      {{ point.address }}
+                    </p>
                   </div>
                   <div class="card-footer">
                     <div class="container">
@@ -156,7 +168,7 @@
                     </div>
                   </div>
                 </div>
-                <br />
+                <br>
               </div>
             </b-carousel-item>
           </b-carousel>
@@ -168,7 +180,7 @@
 
 <script>
 export default {
-  name: 'contactoPage',
+  name: 'ContactoPage',
   data () {
     return {
       form: {},
