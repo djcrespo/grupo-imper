@@ -11,7 +11,7 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "lintfix": "npm run lint:js -- --fix",
-    "deploy": "push-dir --dir=grupoimper --branch=gh-pages --cleanup"
+    "deploy": "push-dir --dir=grupoimper --branch=static-page --cleanup"
   },
   "dependencies": {
     "@emailjs/browser": "^3.7.0",
